@@ -6,13 +6,13 @@ import org.springframework.context.annotation.Configuration;
 public class EnableJavaConfig {
   
   @Bean
-  public CompactDisc compactDisc() {
+  public SgtPeppers sgtPeppers() {
     return new SgtPeppers();
   }
   
   @Bean
-  public MediaPlayer mediaPlayer(/*CompactDisc compactDisc*/) {
-    return new CDPlayer(/*compactDisc*/compactDisc());
+  public CDPlayer cdPlayer(SgtPeppers sgtPeppers) {
+    return new CDPlayer(sgtPeppers/*sgtPeppers()*/);//¹¹ÔìÆ÷×¢Èë
   }
 
 }
